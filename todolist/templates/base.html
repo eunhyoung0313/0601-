@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% block css%}
+    {% endblock css%}
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <ul>
+                <li><a class="nav-item" href="{% url 'home' %}">HOME</a></li>
+                <li><a class="nav-item">Detail&Memo</a></li>
+                <li><a class="nav-item">Edit</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+</body>
+</html>
