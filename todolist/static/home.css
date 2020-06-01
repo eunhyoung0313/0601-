@@ -43,6 +43,11 @@ h1{ width:100%;
     display:flex;
     justify-content: center;
 }
+.wrapper_mypage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 .add_button{
     background-color: cadetblue;
     height:25px;
@@ -53,6 +58,19 @@ h1{ width:100%;
     align-items: center;
     border-radius: 10%;
     text-decoration: none;
+}
+.mypage{
+    height: 28px;
+    width: 60%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    color:white;
+}
+
+
 }
 .material-icons{
     font-size:25px;

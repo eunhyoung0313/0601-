@@ -42,11 +42,16 @@
                 </form>
                 <div class="comment_content">
                     {% for comment in chosen_list.comments.all %}
-                    <div class="content-line">
+                    <div class="content-line">    
                         <li>{{comment.content}}</li>
+                        {% if comment.author.pk == user.pk %}
+                        <a class="edit_button, button" href="{% url 'edit_comment' chosen_list.pk comment.pk %}"><span class="material-icons">
+                                create</span>
+                        </a>
                             <a href="{% url 'delete_comment' chosen_list.pk comment.pk %}"><span class="material-icons">
                                 clear
                                 </span></a>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>

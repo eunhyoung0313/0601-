@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +16,17 @@
     <div class="container">
         <nav class="nav-bar">
             <ul>
+                {% if user.is_authenticated %}
+                <li><a class="nav-item">Hello, {{user.username}}!</a></li>
+                <li><a class="nav-item" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a class="nav-item" href="{% url 'login' %}">Login</a></li>  
+                <li><a class="nav-item" href="{% url 'signup' %}">Signup</a></li>
+                {% endif %}
                 <li><a class="nav-item" href="{% url 'home' %}">HOME</a></li>
-                <li><a class="nav-item">Detail&Memo</a></li>
-                <li><a class="nav-item">Edit</a></li>
+                <li><a class="nav-item" href="{% provider_login_url 'kakao' %}">Kakao Login</a></li>
+                <li><a class="nav-item" href="{% provider_login_url 'google' %}">Google Login</a></li>
+                
             </ul>
         </nav>
         {% block content %}
